@@ -13,9 +13,9 @@ Group by location
 order by Total_Deaths desc;
 
 --Find the latest infection rate by country
-Select Location, max (date),Population, SUM(cast(new_deaths as int)) as Total_Deaths,  Max((total_cases/population))*100 as Infection_Rate
+Select Location, MAX(date) as date,Population, MAX(total_cases) as Cases,  (MAX(total_cases)/population)*100 as Infection_Rate
 From CovidDeath
---Where location like '%states%'
+--Where location like '%united%'
 Group by Location, Population
 order by Infection_Rate desc;
 
