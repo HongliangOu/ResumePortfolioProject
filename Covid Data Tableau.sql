@@ -8,7 +8,7 @@ order by 1,2;
 --Find total deaths by five continents
 Select location as Continent, SUM(cast(new_deaths as int)) as Total_Deaths
 From CovidDeath
-Where location  in ('europe', 'north america', 'asia','south america','africa')
+Where location  in ('europe', 'north america', 'asia','south america','africa','oceania')
 Group by location
 order by Total_Deaths desc;
 
